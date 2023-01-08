@@ -1,4 +1,4 @@
-package Java_Advanced.CodeGen;
+package Java_Advanced.TestDomeTests;
 
 
 class Node {
@@ -38,7 +38,7 @@ class Node {
 }
 
 public class BinarySearchTree {
-    public static boolean contains(Node root, int value) throws UnsupportedOperationException {
+    public static boolean contains(Node root, int value)  {
         try {
             if(root!=null){
                 if(root.getValue()<value){
@@ -64,7 +64,7 @@ public class BinarySearchTree {
             
         } catch (Exception e) {
             // TODO: handle exception
-            throw new UnsupportedOperationException("Invalid operation");
+            throw new UnsupportedOperationException("Waiting to be implemented.");
         }
         
         
@@ -80,15 +80,10 @@ public class BinarySearchTree {
         Node n2 = new Node(2, n1, n3);
         
         try {
-            System.out.println(contains(n2, -1));
+            System.out.println(contains(n2, 3));
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-    }
-}
-class UnsupportedOperationException extends Exception{
-    public UnsupportedOperationException(String msg){
-        super(msg);
     }
 }

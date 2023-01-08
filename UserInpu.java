@@ -1,8 +1,8 @@
-package Java_Advanced.CodeGen;
+package Java_Advanced.TestDomeTests;
 
 public class UserInpu {
     public static class TextInput {
-        protected String currentvalue;
+        protected String currentvalue="";
         public void add(char c){
             this.currentvalue=this.currentvalue+c;
             
@@ -28,7 +28,8 @@ public class UserInpu {
                 }
             } catch (Exception e) {
                 // TODO: handle exception
-                return ;
+               // this.currentvalue=this.currentvalue;
+               return;
             }
         }
     }

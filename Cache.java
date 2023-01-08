@@ -1,4 +1,4 @@
-package Java_Advanced.CodeGen;
+package Java_Advanced.TestDomeTests;
 
 public class Cache {
 
