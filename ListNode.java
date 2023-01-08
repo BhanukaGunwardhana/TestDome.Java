@@ -19,7 +19,64 @@ import org.w3c.dom.NodeList;
   class Solution {
   
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-      String s1="";
+      
+      ListNode node1=l1;
+      ListNode node2=l2;
+      boolean firstit=true;
+      int count=0;
+      ListNode currNode=null;
+      ListNode firstNode=null;
+      int retain=0;
+      while((node1!=null || node2!=null || retain!=0) && count<=100){
+        count++;
+        int num1=0;
+        int num2=0;
+        if(node1!=null){num1=node1.val; }
+        if(node2!=null){num2=node2.val;}
+        
+        if((num1<0 || num2<0) || (num1>9 ||num2>9)){
+          return null;
+        }
+        
+        
+       
+        int sum=num1+num2+retain;
+        int num3=sum/10;
+        int mod=sum%10;
+        
+        if(firstit==true){
+          currNode=new ListNode(mod);
+          firstNode=currNode;
+          retain=num3;
+
+          firstit=false;
+          node1=node1.next;
+          node2=node2.next;
+          continue;
+        }
+        
+        //currNode=new ListNode(mod, currNode);
+        currNode.next=new ListNode(mod);
+        currNode=currNode.next;
+        retain=num3;
+        if(node1!=null){node1=node1.next;}
+        
+        if(node2!=null){node2=node2.next;}
+        
+        
+        //node2=node2.next;
+
+        
+        
+
+
+      }
+      return currNode;
+
+
+
+
+      /*String s1="";
       String s2="";
       String s3="";
       List<String> ls1=new ArrayList<>();
@@ -73,7 +130,8 @@ import org.w3c.dom.NodeList;
         currNode=new ListNode(ls3.get(i), currNode);
           
       }
-      return currNode;
+      return currNode;*/
+
 
       
       
