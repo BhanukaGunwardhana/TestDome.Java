@@ -44,7 +44,7 @@ import org.w3c.dom.NodeList;
       int count_=0;
       while (node2!= null){
         if(count>100){return null;}
-        int value_=node1.val;
+        int value_=node2.val;
         if(value_<0 || value_>9){return null;}
         ls2.add(String.valueOf(node2.val));
 
@@ -54,11 +54,12 @@ import org.w3c.dom.NodeList;
       for (int i=ls1.size()-1;i>=0;i--){
         s1=s1+ls1.get(i);
       }
-      for(int i=ls2.size()-1;i>0;i--){
+      for(int i=ls2.size()-1;i>=0;i--){
         s2=s2+ls2.get(i);
       }
-      if(s1.equals("") && s2.equals("")){return null;}
-      int sum=Integer.valueOf(s1)+Integer.valueOf(s2);
+      if(s1.equals("") || s2.equals("")){return null;}
+      long sum=Long.parseUnsignedLong(s1)+Long.parseUnsignedLong(s2);
+      //double sum=Double.parseDouble(s1)+Double.parseDouble(s2);
       s3=String.valueOf(sum);
       for(int i=0;i<s3.length();i++){
         ls3.add(Integer.valueOf(s3.substring(i, i+1)));
